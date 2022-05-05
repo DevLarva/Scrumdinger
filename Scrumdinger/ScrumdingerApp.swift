@@ -11,7 +11,10 @@ import SwiftUI
 struct ScrumdingerApp: App {
     var body: some Scene {
         WindowGroup {
+            NavigationView { //ScrumdingerApp.swift에서 ScrumsView를 NavigationView에 포함시킵니다.
             ScrumsView(scrums: DailyScrum.sampleData) //리스트 뷰를 보여줌
+            }
+            
         }
     }
 }
