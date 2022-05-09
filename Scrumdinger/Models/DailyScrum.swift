@@ -44,4 +44,10 @@ extension DailyScrum {
         DailyScrum(title: "App Dev", attendees: ["Katie", "Gray", "Euna", "Luis", "Darla"], lengthInMinutes: 5, theme: .orange),
         DailyScrum(title: "Web Dev", attendees: ["Chella", "Chris", "Christina", "Eden", "Karla", "Lindsey", "Aga", "Chad", "Jenn", "Sarah"], lengthInMinutes: 5, theme: .poppy)
     ]
+    mutating func update(from data: Data) { // 오류 발생하고 나서 따로 추가한 문장
+            title = data.title
+            attendees = data.attendees
+            lengthInMinutes = Int(data.lengthInMinutes)
+            theme = data.theme
+        }
 }

@@ -1,53 +1,52 @@
 import SwiftUI
 
 struct DetailView: View {
-    let scrum: DailyScrum
+    @Binding var scrum: DailyScrum
     
+    @State private var data = DailyScrum.Data()
     @State private var isPresentingEditView = false
-
+    
     var body: some View {
         List {
-            Section(header:Text("Metting Info")){
+            Section(header: Text("Meeting Info")) {
                 NavigationLink(destination: MeetingView()) {
-                    Label("Start Meeting",systemImage: "timer")
+                    Label("Start Meeting", systemImage: "timer")
                         .font(.headline)
                         .foregroundColor(.accentColor)
                 }
                 HStack {
-                    Label("Length",systemImage: "clock")
+                    Label("Length", systemImage: "clock")
                     Spacer()
                     Text("\(scrum.lengthInMinutes) minutes")
                 }
-                .accessibilityElement(children: .combine) //HStack에 내게 필요한 옵션 요소(하위:)를 추가하여 내게 필요한 옵션 사용자에 대한 레이블 및 텍스트 요소를 결합합니다.
+                .accessibilityElement(children: .combine)
                 HStack {
-                    Label("Theme",systemImage: "paintpalette")
+                    Label("Theme", systemImage: "paintpalette")
                     Spacer()
                     Text(scrum.theme.name)
-                        .padding(4)//패딩값이 커지면 사각형이 커진다.
+                        .padding(4)
                         .foregroundColor(scrum.theme.accentColor)
                         .background(scrum.theme.mainColor)
                         .cornerRadius(4)
-                    
                 }
                 .accessibilityElement(children: .combine)
             }
-            Section(header:Text("Attendees")) {
+            Section(header: Text("Attendees")) {
                 ForEach(scrum.attendees) { attendee in
-                    Label(attendee.name,systemImage: "person")
-                    
+                    Label(attendee.name, systemImage: "person")
                 }
             }
-            
         }
         .navigationTitle(scrum.title)
         .toolbar {
             Button("Edit") {
                 isPresentingEditView = true
+                data = scrum.data
             }
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationView {
-                DetailEditView()
+                DetailEditView(data: $data)
                     .navigationTitle(scrum.title)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
@@ -55,20 +54,14 @@ struct DetailView: View {
                                 isPresentingEditView = false
                             }
                         }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") {
-                        isPresentingEditView = false
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                isPresentingEditView = false
+                                scrum.update(from: data) //오류 발생시
+                            }
                         }
                     }
-                }
-            
             }
         }
-    }
-}
-
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView(scrum: DailyScrum.sampleData[0])
     }
 }
