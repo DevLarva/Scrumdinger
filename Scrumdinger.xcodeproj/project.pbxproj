@@ -25,10 +25,11 @@
 		ACF570DD284BA531004924B0 /* ScrumTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF570DC284BA531004924B0 /* ScrumTimer.swift */; };
 		ACF570DF284BAB41004924B0 /* MeetingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF570DE284BAB41004924B0 /* MeetingFooterView.swift */; };
 		ACF570E3284BB020004924B0 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = ACF570E2284BB020004924B0 /* ding.wav */; };
-		ACF570E5284BB0AC004924B0 /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF570E4284BB0AC004924B0 /* AVPlayer+Ding.swift */; };
+		ACFC018B28D8AD1200DF3024 /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFC018A28D8AD1200DF3024 /* AVPlayer+Ding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC5F25CC28D8A5C2005F3F87 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		AC9A6C93281E616000E50BD3 /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9A6C96281E616000E50BD3 /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
 		AC9A6C98281E616000E50BD3 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
@@ -48,7 +49,7 @@
 		ACF570DC284BA531004924B0 /* ScrumTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrumTimer.swift; sourceTree = "<group>"; };
 		ACF570DE284BAB41004924B0 /* MeetingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingFooterView.swift; sourceTree = "<group>"; };
 		ACF570E2284BB020004924B0 /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
-		ACF570E4284BB0AC004924B0 /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AVPlayer+Ding.swift"; path = "../../../../../Downloads/ManagingStateAndLifeCycle/StartingProject/Scrumdinger/Models/AVPlayer+Ding.swift"; sourceTree = "<group>"; };
+		ACFC018A28D8AD1200DF3024 /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +66,7 @@
 		AC9A6C8A281E616000E50BD3 = {
 			isa = PBXGroup;
 			children = (
+				AC5F25CC28D8A5C2005F3F87 /* info.plist */,
 				AC9A6C95281E616000E50BD3 /* Scrumdinger */,
 				AC9A6C94281E616000E50BD3 /* Products */,
 			);
@@ -81,10 +83,8 @@
 		AC9A6C95281E616000E50BD3 /* Scrumdinger */ = {
 			isa = PBXGroup;
 			children = (
-				AC9A6CA4281E66E300E50BD3 /* Models */,
 				AC9A6C96281E616000E50BD3 /* ScrumdingerApp.swift */,
 				ACB5FA1F2828DDBB004DA364 /* ThemeView.swift */,
-				ACF570DC284BA531004924B0 /* ScrumTimer.swift */,
 				AC9A6CA9281E69AD00E50BD3 /* CardView.swift */,
 				AC9A6CAB281E6BA400E50BD3 /* TrailingIconLabelStyle.swift */,
 				AC9A6CAD281E6E4800E50BD3 /* ScrumsView.swift */,
@@ -94,9 +94,9 @@
 				ACB5FA212828E0FE004DA364 /* ThemePicker.swift */,
 				ACF570D8284B95A9004924B0 /* MeetingHeaderView.swift */,
 				ACF570DA284BA3EA004924B0 /* ScrumProgressViewStyle.swift */,
-				ACF570E4284BB0AC004924B0 /* AVPlayer+Ding.swift */,
 				ACF570E2284BB020004924B0 /* ding.wav */,
 				ACF570DE284BAB41004924B0 /* MeetingFooterView.swift */,
+				AC9A6CA4281E66E300E50BD3 /* Models */,
 				AC9A6C9A281E616200E50BD3 /* Assets.xcassets */,
 				AC9A6C9C281E616200E50BD3 /* Preview Content */,
 			);
@@ -115,7 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				AC9A6CA7281E682600E50BD3 /* DailyScrum.swift */,
+				ACF570DC284BA531004924B0 /* ScrumTimer.swift */,
 				AC9A6CA5281E670500E50BD3 /* Theme.swift */,
+				ACFC018A28D8AD1200DF3024 /* AVPlayer+Ding.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,7 +208,7 @@
 				AC9A6C97281E616000E50BD3 /* ScrumdingerApp.swift in Sources */,
 				ACB5FA202828DDBB004DA364 /* ThemeView.swift in Sources */,
 				AC9A6CAA281E69AD00E50BD3 /* CardView.swift in Sources */,
-				ACF570E5284BB0AC004924B0 /* AVPlayer+Ding.swift in Sources */,
+				ACFC018B28D8AD1200DF3024 /* AVPlayer+Ding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +265,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_FILE[sdk=*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -338,11 +341,13 @@
 				DEVELOPMENT_TEAM = 8N7YRTC92N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = /Users/baegdaehong/Desktop/xcode/Scrumdinger/info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,11 +372,13 @@
 				DEVELOPMENT_TEAM = 8N7YRTC92N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = /Users/baegdaehong/Desktop/xcode/Scrumdinger/info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
