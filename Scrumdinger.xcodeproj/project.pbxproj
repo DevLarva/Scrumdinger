@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC2DCDD128D961D700283349 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2DCDD028D961D700283349 /* History.swift */; };
 		AC9A6C97281E616000E50BD3 /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A6C96281E616000E50BD3 /* ScrumdingerApp.swift */; };
 		AC9A6C99281E616000E50BD3 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A6C98281E616000E50BD3 /* MeetingView.swift */; };
 		AC9A6C9B281E616200E50BD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9A6C9A281E616200E50BD3 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC2DCDD028D961D700283349 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		AC5F25CC28D8A5C2005F3F87 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		AC9A6C93281E616000E50BD3 /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9A6C96281E616000E50BD3 /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				ACF570DC284BA531004924B0 /* ScrumTimer.swift */,
 				AC9A6CA5281E670500E50BD3 /* Theme.swift */,
 				ACFC018A28D8AD1200DF3024 /* AVPlayer+Ding.swift */,
+				AC2DCDD028D961D700283349 /* History.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC2DCDD128D961D700283349 /* History.swift in Sources */,
 				ACB5FA222828E0FE004DA364 /* ThemePicker.swift in Sources */,
 				ACF570DB284BA3EA004924B0 /* ScrumProgressViewStyle.swift in Sources */,
 				ACF570DF284BAB41004924B0 /* MeetingFooterView.swift in Sources */,
