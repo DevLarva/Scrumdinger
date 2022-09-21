@@ -15,10 +15,26 @@ class ScrumStore: ObservableObject {
         try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
         
             .appendingPathComponent("scrums.data")
-        
-    
-        
     }
+    
+    static func load() async throws -> [DailyScrum] {
+        try await withCheckedThrowingContinuation { continuation in
+            load { result in
+                switch result {
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                case .success(let scrums):
+                    continuation.resume(returning: scrums)
+                    
+                    
+                    
+                }
+                
+            }
+        }
+    
+    }
+    
     static func load(completion: @escaping (Result<[DailyScrum], Error>)->Void) {
         DispatchQueue.global(qos: .background).async {
             do {
@@ -39,6 +55,19 @@ class ScrumStore: ObservableObject {
                 }
             }
             
+        }
+    }
+    @discardableResult
+    static func save(scrums: [DailyScrum]) async throws -> Int {
+        try await withCheckedThrowingContinuation { continuation in
+            save(scrums: scrums) { result in
+                switch result {
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                case .success(let scrumsSaved) :
+                    continuation.resume(returning: scrumsSaved)
+                }
+            }
         }
     }
         static func save(scrums: [DailyScrum], completion: @escaping (Result<Int, Error>)->Void) {
