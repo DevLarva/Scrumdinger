@@ -1,3 +1,7 @@
+/*
+See LICENSE folder for this sample’s licensing information.
+*/
+
 import SwiftUI
 
 struct ScrumsView: View {
@@ -45,9 +49,9 @@ struct ScrumsView: View {
                         }
                     }
             }
-            .onChange(of: scenePhase) { phase in
-                if phase == .inactive { saveAction() }
-            }
+        }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
         }
     }
 }
@@ -59,3 +63,4 @@ struct ScrumsView_Previews: PreviewProvider {
         }
     }
 }
+

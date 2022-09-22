@@ -12,8 +12,10 @@ class ScrumStore: ObservableObject {
     @Published var scrums: [DailyScrum] = []
     
     private static func fileURL() throws -> URL {
-        try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        
+        try FileManager.default.url(for: .documentDirectory,
+                                       in: .userDomainMask,
+                                       appropriateFor: nil,
+                                       create: false)
             .appendingPathComponent("scrums.data")
     }
     
@@ -25,14 +27,9 @@ class ScrumStore: ObservableObject {
                     continuation.resume(throwing: error)
                 case .success(let scrums):
                     continuation.resume(returning: scrums)
-                    
-                    
-                    
                 }
-                
             }
         }
-    
     }
     
     static func load(completion: @escaping (Result<[DailyScrum], Error>)->Void) {
@@ -54,9 +51,9 @@ class ScrumStore: ObservableObject {
                     completion(.failure(error))
                 }
             }
-            
         }
     }
+    
     @discardableResult
     static func save(scrums: [DailyScrum]) async throws -> Int {
         try await withCheckedThrowingContinuation { continuation in
@@ -64,27 +61,27 @@ class ScrumStore: ObservableObject {
                 switch result {
                 case .failure(let error):
                     continuation.resume(throwing: error)
-                case .success(let scrumsSaved) :
+                case .success(let scrumsSaved):
                     continuation.resume(returning: scrumsSaved)
                 }
             }
         }
     }
-        static func save(scrums: [DailyScrum], completion: @escaping (Result<Int, Error>)->Void) {
-            DispatchQueue.global(qos: .background).async {
-                do {
-                    let data = try JSONEncoder().encode(scrums)
-                    let outfile = try fileURL()
-                    try data.write(to: outfile)
-                    DispatchQueue.main.async {
-                        completion(.success(scrums.count))
-                    }
-                } catch {
-                    DispatchQueue.main.async {
-                        completion(.failure(error))
-                    }
+    
+    static func save(scrums: [DailyScrum], completion: @escaping (Result<Int, Error>)->Void) {
+        DispatchQueue.global(qos: .background).async {
+            do {
+                let data = try JSONEncoder().encode(scrums)
+                let outfile = try fileURL()
+                try data.write(to: outfile)
+                DispatchQueue.main.async {
+                    completion(.success(scrums.count))
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
                 }
             }
         }
-        
     }
+}

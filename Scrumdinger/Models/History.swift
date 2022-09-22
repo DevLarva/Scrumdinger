@@ -1,18 +1,15 @@
-//
-//  History.swift
-//  Scrumdinger
-//
-//  Created by 백대홍 on 2022/09/20.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+*/
 
 import Foundation
 
 struct History: Identifiable, Codable {
-    let id:UUID
-    let date:Date
+    let id: UUID
+    let date: Date
     var attendees: [DailyScrum.Attendee]
-    var lengthInMinutes:Int
-    
+    var lengthInMinutes: Int
+
     init(id: UUID = UUID(), date: Date = Date(), attendees: [DailyScrum.Attendee], lengthInMinutes: Int = 5) {
         self.id = id
         self.date = date
